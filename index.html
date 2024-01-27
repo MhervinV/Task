@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head!---->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task #1 - WebDevelopment 011624</title>
+    <link rel="stylesheet" type="text/css" href="design1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Noto+Sans+JP:wght@200&display=swap" rel="stylesheet">
+    <link href="design1.css" ref="stylesheet">
+
+    <script src="index.js"></script>
+</head>
+<body>    
+    <div class="container">
+        <h1>BSIT 3 - 5<br></h1>
+    </div>
+    <div class="content-container">
+        <h2>REGISTRATION FORM</h2>
+        <form id="registrationForm" method="POST" action="https://script.google.com/macros/s/AKfycbwh2S6F8_-fJjBOaaZfxLxEW2eg0iJbz29rDM_TiKNVlNGjGfdllzU3ZBCkHmFZ1Own/exec">
+            <h3>PERSONAL INFORMATION</h3>
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="First Name" placeholder="Type here your First Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="Last Name" placeholder="Type here your Last Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="Email Address" placeholder="Type here your Email address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone/Mobile No.:</label>
+                <input type="tel" id="phone" name="Phone/Mobile No." min="1" maxlength="11" placeholder="Phone number should be 11-digit" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="Password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="Age" min="1" max="50" required>
+            </div>
+
+            <div class="form-group">
+                <label style="margin-right: 80px;">Gender:</label>
+                <label class="radio-inline">
+                    <input type="radio" id="male" name="Gender" value="Male" required> Male
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" id="female" name="Gender" value="Female" required> Female
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label for="date-of-birth">Date of Birth:</label>
+                <input type="date" id="date-of-birth" name="Date of Birth" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fave-subject">Fave Subject:</label>
+                <select id="fave-subject" name="Fave Subject" value="Choose here your Fave Subject" required>
+                    <option value=""></option>
+                    <option value="Fundamentals of Research">Fundamentals of Research</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Database Administration">Database Administration</option>
+                    <option value="Art Appreciation">Art Appreciation</option>
+                    <option value="Systems Integration and Architecture">Systems Integration and Architecture</option>
+                    <option value="Multimedia">Multimedia</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="None of the above">None of the above</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" onclick="registrationForm()" class="submit-button">SUBMIT</button>
+            </div>
+        
+        </form>
+  
+        <div id="error-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeErrorModal()">&times;</span>
+                <div id="error-message-container" class="error-message-container"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

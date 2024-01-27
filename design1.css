@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(bg.avif);
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    margin: 0 auto; 
+    max-width: 800px;
+}
+
+.content-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+/* Heading Styles */
+h1 {
+    font-family: 'Honk', 'Noto Sans JP', sans-serif;
+    background-color: #a0a0a0;
+    color: #b6fd43;
+    padding: 20px;
+    font-size: 30px;
+    margin: 0;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#registrationForm label,
+#registrationForm input {
+    display: inline-block;
+    width: 48%;
+    margin-bottom: 10px;
+}
+
+#gender,
+#fave-subject {
+    width: 49%;
+}
+
+/* Button Styles */
+button.submit-button {
+    background-color: #85d9ee;
+    color: #000000;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    border-radius: 25px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+}
+
+button.submit-button:hover {
+    background-color: #6dbad6; 
+}
+
+button.submit-button:active {
+    box-shadow: none; /* Remove box shadow on click */
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Error Message Styles */
+.error-message-container {
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #555;
+    color: #fff;
+}
+
+.error-message-container p {
+    margin: 5px 0;
+}
+
+/* Placeholder Styles */
+input[type="email"]::placeholder,
+input[type="text"]::placeholder,
+input[type="tel"]::placeholder {
+    font-style: italic;
+}
