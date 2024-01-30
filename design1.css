@@ -59,16 +59,6 @@ h2 {
     margin-top: 20px;
 }
 
-
-form {
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
 #registrationForm label,
 #registrationForm input {
     display: inline-block;
@@ -106,6 +96,9 @@ form {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
 }
 
 .form-group {
@@ -193,8 +186,6 @@ form {
     z-index: 1000;
 }
 
-
-
 .close {
     color: #aaa;
     float: right;
@@ -225,6 +216,7 @@ input[type="email"]::placeholder,
 input[type="text"]::placeholder,
 input[type="tel"]::placeholder {
     font-style: italic;
+    font-size: 14px;
 }
 
 input[type="text"],
@@ -236,12 +228,12 @@ input[type="radio"],
 input[type="date"],
 select {
     width: 100%;
-    padding: 12px 20px;
+    padding: 10px 80px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 25px;
-    box-sizing: border-box;
+    box-sizing: content-box;
     transition: border-color 0.3s ease;
 }
 
@@ -256,3 +248,7 @@ select:focus {
     border-color: #0077ff;
     outline: none;
 }
+
+
+
+

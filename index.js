@@ -57,5 +57,10 @@ document.getElementById("registrationForm").addEventListener("submit", function(
 });
 
 function showSuccessMessage() {
-    alert("Well done! Form submitted successfully.");
+    var message = 'Well done! Form is submitted successfully!';
+    alert(message);
+    window.location.href = "https://script.google.com/macros/s/AKfycbwh2S6F8_-fJjBOaaZfxLxEW2eg0iJbz29rDM_TiKNVlNGjGfdllzU3ZBCkHmFZ1Own/exec";
+    setTimeout(function() {
+        window.location.href = "index.html";
+    }, 3000);
 }
