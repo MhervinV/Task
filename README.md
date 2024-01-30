@@ -1,4 +1,4 @@
-📌 Task #1 - Individual
+# 📌 Task #1 - Individual
 💻 Web Development 011624
 
 🧑 Submitted by: Mhervin Velasco - BSIT 3-5           
