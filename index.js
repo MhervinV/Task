@@ -16,21 +16,40 @@ function registrationForm(event) {
         var confirmation = confirm("Are you sure you want to submit the form?");
         if (confirmation) {
             form.submit();
-            showSuccessMessage();
+            form.submit();
+            var message = 'Form is submitted successfully!';
+        
+            showCustomModal(message);
+        
+            form.reset();
+        }
+        
+        function showCustomModal(message) {
+            var popup = document.createElement('div');
+            popup.className = 'custom-modal';
+            popup.innerHTML = '<div class="modal-content">' + message + '</div>';
+            document.body.appendChild(popup);
+        
+            popup.classList.add('show');
+        
+            setTimeout(function() {
+                popup.classList.remove('show');
+                document.body.removeChild(popup);
+            }, 5000); 
         }
     } else {
         var errorMessage = 'Please correct the following errors before submitting: <br><br>';
 
         if (!areAllFieldsFilled) {
-            errorMessage += '- All required fields must be filled out. <br>';
+            errorMessage += '* All required fields must be filled out. <br>';
         }
 
         if (!isEmailValid) {
-            errorMessage += '- Email address should ends with @gmail.com. <br>';
+            errorMessage += '* Email address should ends with @gmail.com. <br>';
         }
 
         if (!isPhoneNumberValid) {
-            errorMessage += '- Phone number should be a 11-digit number. <br>';
+            errorMessage += '* Phone number should be a 11-digit number. <br>';
         }
 
         document.getElementById("error-message-container").innerHTML = errorMessage;
@@ -51,16 +70,3 @@ function closeErrorModal() {
 document.getElementById("registrationForm").addEventListener("submit", function(event) {
     registrationForm(event);
 });
-
-document.getElementById("registrationForm").addEventListener("submit", function(event) {
-    showSuccessMessage();
-});
-
-function showSuccessMessage() {
-    var message = 'Well done! Form is submitted successfully!';
-    alert(message);
-    window.location.href = "https://script.google.com/macros/s/AKfycbwh2S6F8_-fJjBOaaZfxLxEW2eg0iJbz29rDM_TiKNVlNGjGfdllzU3ZBCkHmFZ1Own/exec";
-    setTimeout(function() {
-        window.location.href = "index.html";
-    }, 3000);
-}

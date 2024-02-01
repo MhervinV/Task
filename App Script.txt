@@ -1,43 +1,36 @@
-// Original code from https://github.com/jamiewilson/form-to-google-sheets
-// Updated for 2021 and ES6 standards
+var SPREADSHEET_ID = '1LrpLHzdLG8ypcMhY93PPg_nZJLclv8_8vuSvvX8Y55c';
+var SHEET_NAME = 'Data';
 
-const sheetName = 'InputtedData'
-const scriptProp = PropertiesService.getScriptProperties()
+function doPost(e) {
+    try {
 
-function initialSetup () {
-  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
-  scriptProp.setProperty('key', activeSpreadsheet.getId())
-}
+        if (!e || !e.parameter) {
+            throw new Error('Invalid request parameters.');
+        }
 
-function doPost (e) {
-  const lock = LockService.getScriptLock()
-  lock.tryLock(10000)
+        var sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME);
 
-  try {
-    const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
-    const sheet = doc.getSheetByName(sheetName)
+        var formData = e.parameter;
 
-    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
-    const nextRow = sheet.getLastRow() + 1
+        var data = [
+            formData['first-name'],
+            formData['last-name'],
+            formData['email'],
+            formData['phone'],
+            formData['password'],
+            formData['age'],
+            formData['gender'],
+            formData['date-of-birth'],
+            formData['fave-subject'],
+        ];
 
-    const newRow = headers.map(function(header) {
-      return header === 'Date' ? new Date() : e.parameter[header]
-    })
+        sheet.appendRow(data);
 
-    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
-    return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
-      .setMimeType(ContentService.MimeType.JSON)
-  }
+    } catch (error) {
+  
+        console.error('Error: ' + error.toString());
 
-  catch (e) {
-    return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
-      .setMimeType(ContentService.MimeType.JSON)
-  }
-
-  finally {
-    lock.releaseLock()
-  }
+        return ContentService.createTextOutput('Error submitting the form: ' + error.toString());
+    }
 }
